@@ -5,7 +5,7 @@
   - Runs uvicorn on 0.0.0.0:8080
   llm-frontend-python/Dockerfile
   - Python 3.12 slim base image
-  - Installs Flask/requests dependencies
+  - Installs Flask/requests dependencies.
   - Exposes port 5000
   - Runs python app.py
   docker-compose.yml (project root)
@@ -13,7 +13,7 @@
   - llm-multiroute service: passes through all Ollama config via environment
    variables (reads from your host .env or shell)
   - llm-frontend-python service: sets BACKEND_URL=http://llm-multiroute:8080
-   so the frontend proxy reaches the backend using Docker's internal DNS, and FLASK_DEBUG=false for production
+   so the frontend proxy reaches the backend using Docker's internal DNS, and FLASK_DEBUG=false for production.
   - depends_on ensures the backend starts before the frontend 
   
   How to run
